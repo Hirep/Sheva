@@ -16,9 +16,10 @@ class Word:
         self.begin = begin
         self.ending = ending
         self.role = None
+        self.syntax_role = None
         
     def __str__(self):
-        return "{}, {}, {}, {}".format(self.word, self.id, self.ending, self.role)
+        return "{}, {}, {}, {}, {}".format(self.word, self.id, self.ending, self.role, self.syntax_role)
 
 
 def get_word_ending(word):

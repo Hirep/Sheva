@@ -12,7 +12,7 @@ ABBR_RE = r"[\u0410-\u042F]{2,}"
 
 
 def split_with_rexp(text, rsplt):
-    sentences = re.split(rsplt, text.lower())
+    sentences = [x.lower() for x in re.split(rsplt, text)]
     return (
         sentences
         if sentences[-1] != ''
@@ -45,8 +45,8 @@ def find_eng(sentence):
     eng_list = re.findall(ENG_RE, sentence)  # А-Я
     return eng_list
 
-
-print(find_abbr("віаівра ШОРЬРІОВ віаіватів іваьі тватівт івта ітват "))
+#BAG BUG TODO
+#print(find_abbr("віаівра ШОРЬРІОВ віаіватів іваьі тватівт івта ітват "))
 
 
 def premorph(text):

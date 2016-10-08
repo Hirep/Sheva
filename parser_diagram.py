@@ -7,8 +7,6 @@ words_list = set()
 errors_list = set()
 
 
-
-
 def load_dict():
     """
 
@@ -22,7 +20,7 @@ def load_dict():
     return par, root_dict
 
 
-def find_lang_part(text, ):
+def find_lang_part(phrase):
 
     #load data
     par, root_dict = load_dict()
@@ -47,12 +45,12 @@ def find_lang_part(text, ):
             elif (type(row['end']) is not str) and row['id'] == word.id and word.ending == '':
                 word.role = row['role']
 
-    for word in words:
-        print(word.word, word.role)
+    # for word in words:
+    #     print(word.word, word.role)
+
     result_words = [word.word for word in words]
-    result_roles = [word.roles for word in words]
+    result_roles = [word.role for word in words]
 
-    return result_words, result_roles
+    return result_words, result_roles, words
 
-# phrase = 'Кохайтеся чорнобриві, та не з москалями. Москалі лихі люди, роблять лихо з вами.'
-# find_lang_part(phrase)
+# print(find_lang_part("віа іва іва іва іваіаі"))
