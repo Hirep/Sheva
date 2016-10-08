@@ -5,10 +5,11 @@
 
 import regex as re
 
-SENTENCES_RE = '[\.\!\?]+'
+SENTENCES_RE = r"\[\.\!\?]\s*[A-ZА-Я]"
 WORDS_RE = '[^[:alnum:]]+'
 ENG_RE = u"[a-zA-Z]{2,}"
-ABBR_RE = u"[\u0410-\u042F]{2,}"
+ABBR_RE = r"[\u0410-\u042F]{2,}"
+
 
 def split_with_rexp(text, rsplt):
     sentences = re.split(rsplt, text.lower())
@@ -41,9 +42,11 @@ def find_eng(sentence):
     :param sentence:
     :return:
     """
-    eng_list = re.findall(ENG_RE, ukr)  # А-Я
+    eng_list = re.findall(ENG_RE, sentence)  # А-Я
     return eng_list
 
+
+print(find_abbr("віаівра ШОРЬРІОВ віаіватів іваьі тватівт івта ітват "))
 
 
 def premorph(text):
