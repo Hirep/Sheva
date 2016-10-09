@@ -38,10 +38,12 @@ def syntax(phrase1):
         else:
             word.syntax_role = ''
 
-    # for word in words:
-    #     print(word.word, word.syntax_role)
+    for word in words:
+        print(word.word, word.syntax_role)
 
 #TEST TODO
 
 uk = 'Кохайтеся чорнобриві, та не з москалями. Москалі чужі люди, роблять лихо з вами.'
-syntax(uk)
+
+q2 = 'Чому не можна кохатися?'
+print(syntax(q2))

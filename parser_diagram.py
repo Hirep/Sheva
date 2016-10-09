@@ -45,12 +45,14 @@ def find_lang_part(phrase):
             elif (type(row['end']) is not str) and row['id'] == word.id and word.ending == '':
                 word.role = row['role']
 
-    # for word in words:
-    #     print(word.word, word.role)
+    for word in words:
+        print(word.word, word.role)
 
     result_words = [word.word for word in words]
     result_roles = [word.role for word in words]
 
     return result_words, result_roles, words
 
-# print(find_lang_part("віа іва іва іва іваіаі"))
+q2 = 'Чому не можна кохатися?'
+# print(syntax(q2))
+# print(find_lang_part(q2))
